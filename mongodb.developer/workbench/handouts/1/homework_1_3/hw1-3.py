@@ -13,7 +13,7 @@ import sys
 def get_hw1(n):
 
     # connnecto to the db on standard port
-    connection = pymongo.MongoClient("mongodb://localhost")
+    connection = pymongo.MongoClient("mongodb://db")
 
     n = int(n)
 
@@ -33,5 +33,3 @@ def get_hw1(n):
 
 bottle.debug(True)
 bottle.run(host='localhost', port=8080)
-
-

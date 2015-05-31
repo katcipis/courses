@@ -5,12 +5,14 @@ web:
   volumes:
     - .:/app
   ports:
-    - "8082:8082"
+    - "8080:8080"
   working_dir: /app
 
 dbshell:
   links:
     - db
+  volumes:
+    - .:/app
   image: mongo
 
 db:
