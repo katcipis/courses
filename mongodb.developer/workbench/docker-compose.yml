@@ -1,0 +1,12 @@
+web:
+  build: .
+  links:
+    - db
+  volumes:
+    - .:/app
+  ports:
+    - "8082:8082"
+  working_dir: /app
+db:
+  image: mongo
+  command: mongod --profile 1 --slowms 2
