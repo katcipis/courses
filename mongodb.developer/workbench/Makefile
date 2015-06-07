@@ -1,8 +1,14 @@
-web-shell:
-	docker-compose run web bash
+build:
+	docker build -t web .
+
+web-shell: build
+	docker run -ti -v `pwd`:/app web bash
 
 mongo-shell:
-	docker-compose run dbshell mongo --host db
+	docker run -ti --net="host" -v `pwd`:/app mongo bash
 
-mongo-bash:
-	docker-compose run dbshell bash
+mongo:
+	docker run --net="host" mongo
+
+start:
+	docker-compose up
