@@ -1,34 +1,32 @@
-
-
 import pymongo
 import sys
 
-
-# Copyright 2013, 10gen, Inc.
-# Author: Andrew Erlichson
-
-
 # connnecto to the db on standard port
-connection = pymongo.MongoClient("mongodb://db")
+connection = pymongo.MongoClient("mongodb://localhost")
 
-
-
-db = connection.m101                 # attach to db
-collection = db.funnynumbers         # specify the colllection
-
-
-magic = 0
+db = connection.students                 # attach to db
+collection = db.grades         # specify the colllection
 
 try:
-    iter = collection.find()
-    for item in iter:
-        if ((item['value'] % 3) == 0):
-            magic = magic + item['value']
+    cursor = collection.find({"type" : "homework"}).sort([("student_id", pymongo.ASCENDING), ("score", pymongo.DESCENDING)])
+    previous = None
+    for item in cursor:
+        global previous
+
+        if previous == None:
+            previous = item
+            continue
+
+        if previous["student_id"] != item["student_id"]:
+            print("Removing the grade: {0}".format(previous))
+            collection.remove(previous)
+            print("done")
+
+        previous = item
+
+    print("Removing last grade")
+    collection.remove(previous)
 
 except Exception as e:
     print "Error trying to read collection:", type(e), e
-
-
-print "The answer to Homework One, Problem 2 is " + str(int(magic))
-
 
