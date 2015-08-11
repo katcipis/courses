@@ -1,4 +1,4 @@
-FROM ubuntu:14.10
+FROM ubuntu
 MAINTAINER Matheus Vill matheusvill@gmail.com
 
 RUN echo "deb http://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
