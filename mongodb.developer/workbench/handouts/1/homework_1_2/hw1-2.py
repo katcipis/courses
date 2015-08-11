@@ -9,7 +9,7 @@ import sys
 
 
 # connnecto to the db on standard port
-connection = pymongo.MongoClient("mongodb://db")
+connection = pymongo.MongoClient("mongodb://localhost")
 
 
 

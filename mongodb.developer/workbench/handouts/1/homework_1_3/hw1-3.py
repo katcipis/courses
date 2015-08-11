@@ -13,7 +13,7 @@ import sys
 def get_hw1(n):
 
     # connnecto to the db on standard port
-    connection = pymongo.MongoClient("mongodb://db")
+    connection = pymongo.MongoClient("mongodb://localhost")
 
     n = int(n)
 
