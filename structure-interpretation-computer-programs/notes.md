@@ -67,3 +67,9 @@ Linear recursive add:
 (1+ (1+ 5))
 (1+ 6)
 7
+
+## Cool Quick Stuff
+
+* High order functions as a way to separate concerns, isolate changes, avoid duplication and express patterns (so much for OO)
+* I found another human being that dislikes mathematical notation as me, got happy :-)
+* Abstractions is a way to apply divide and conquer
