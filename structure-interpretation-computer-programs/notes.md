@@ -69,6 +69,44 @@ Linear recursive add:
 7
 ```
 
+## Operator overloading and the glory of prefixed operations
+
+It seems that operator overloading is a good idea because of uniformity.
+For native types like integers you can write:
+
+```
+1 + 2 + 3 + 4
+```
+
+But if I have a complex type (like complex numbers) and want to add them I would need to:
+
+```
+complex1.add(complex2).add(complex3).add(complex4)
+```
+
+Well, that is one way to do that, but without operator overloading you cant escape from
+losing uniformity on your code. Operator overloading allows you to:
+
+```
+complex1 + complex2 + complex3 + complex4
+```
+
+But on a prefixed (and already uniform) language like lisp you have:
+
+```
++ 1 2 3 4
+```
+
+It is already cool because you dont have to repeat the operator. But now if you want to
+add complex you can just define a new function (the operator is also just a function on lisp):
+
+```
+add complex1 complex2 complex3 complex4
+```
+
+Its a interesting win for prefixed operations. Symmetry is beautiful.
+
+
 ## Cool Quick Stuff
 
 * High order functions as a way to separate concerns, isolate changes, avoid duplication and express patterns (so much for OO)
