@@ -117,3 +117,4 @@ Its a interesting win for prefixed operations. Symmetry is beautiful.
 ## Interesting tasks
 
 * Implement sieve of Eratosthenes
+* Implement square root approximation algorithm
