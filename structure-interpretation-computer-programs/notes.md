@@ -118,3 +118,4 @@ Its a interesting win for prefixed operations. Symmetry is beautiful.
 
 * Implement sieve of Eratosthenes
 * Implement square root approximation algorithm
+* SAT-3 checker
