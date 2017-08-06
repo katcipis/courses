@@ -11,7 +11,7 @@ principles for services.
 
 Sometimes it is hard to see the benefits from it. The largest
 network on the time was the telecommunication network and it was
-based on a smart network with extremelly dump endpoints (the old phones).
+based on a smart network with extremely dump endpoints (the old phones).
 
 On the design of the IP protocol this idea of a dump pipe was applied,
 the IP protocol guarantees almost nothing. It does not guarantee delivery or
@@ -26,3 +26,9 @@ be the base for the communication of a lot of different applications.
 
 Seems like a good principle to be applied to any distributed system,
 when using message brokers it is good to have this in mind.
+
+A real life example of this is the wireless protocol that does retransmission
+at the layer level since there is so much loss on wireless. This enables
+recovery from losses with low latency (at layer 2), but for protocols where
+retransmission of stale data is harmful this is a bad choice and there is
+no way around it on wireless since it is enforced at the link layer.
